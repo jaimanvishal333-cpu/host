@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support - AcmeHost</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="logo">AcmeHost</a>
+    </div>
+  </header>
+  <main class="container" style="max-width:720px;padding:40px 0;">
+    <div class="card">
+      <h2>Open a support ticket</h2>
+      <form id="ticket-form">
+        <label for="ticket-subject">Subject</label>
+        <input id="ticket-subject" type="text" required />
+        <label for="ticket-message">Message</label>
+        <textarea id="ticket-message" rows="5" required></textarea>
+        <div id="ticket-result" class="muted" style="margin-top:8px;"></div>
+        <div style="margin-top:14px;display:flex;gap:10px;align-items:center;">
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <span class="muted">You must be logged in</span>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - AcmeHost</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="logo">AcmeHost</a>
+    </div>
+  </header>
+  <main class="container" style="max-width:720px;padding:40px 0;">
+    <div class="card">
+      <h2>Checkout</h2>
+      <p>Plan: <strong id="checkout-plan"></strong></p>
+      <form id="checkout-form">
+        <label for="checkout-domain">Preferred domain (optional)</label>
+        <input id="checkout-domain" type="text" placeholder="example.com" />
+        <div id="checkout-result" class="muted" style="margin-top:8px;"></div>
+        <div style="margin-top:14px;display:flex;gap:10px;align-items:center;">
+          <button class="btn btn-primary" type="submit">Place order</button>
+          <a class="btn" href="/pricing.html">Back to pricing</a>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
+</body>
+</html>

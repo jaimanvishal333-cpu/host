@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - AcmeHost</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="logo">AcmeHost</a>
+      <nav>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/support.html">Support</a>
+        <button id="nav-logout" class="btn btn-outline">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="container" style="padding:40px 0;">
+    <h1>Your dashboard</h1>
+    <div class="card" style="margin-top:16px;">
+      <h3>Orders</h3>
+      <div style="overflow:auto;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Order #</th>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Plan</th>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Domain</th>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Status</th>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Created</th>
+            </tr>
+          </thead>
+          <tbody id="orders-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3>Tickets</h3>
+      <div style="overflow:auto;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Ticket</th>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Subject</th>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Status</th>
+              <th style="text-align:left;padding:8px;border-bottom:1px solid rgba(255,255,255,0.06)">Created</th>
+            </tr>
+          </thead>
+          <tbody id="tickets-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
+</body>
+</html>
