@@ -1,0 +1,23 @@
+<section class="container">
+	<h1><%= plan.title %></h1>
+	<p class="muted"><%= plan.category.toUpperCase() %></p>
+	<p><%= plan.description %></p>
+	<ul>
+		<% (plan.features || []).forEach(f => { %>
+			<li><%= f %></li>
+		<% }) %>
+	</ul>
+	<div class="prices">
+		<span>₹<%= plan.priceMonthly %>/mo</span>
+		<span>₹<%= plan.priceYearly %>/yr</span>
+	</div>
+	<form method="post" action="/orders">
+		<input type="hidden" name="planId" value="<%= plan._id %>">
+		<select name="billing">
+			<option value="monthly">Monthly</option>
+			<option value="yearly">Yearly</option>
+		</select>
+		<button class="btn" type="submit">Order</button>
+	</form>
+</section>
+

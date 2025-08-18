@@ -1,0 +1,34 @@
+<section class="hero">
+	<div class="container">
+		<h1>Modern Hosting for VPS, Dedicated, and Cloud</h1>
+		<p>Pick a plan and get started instantly.</p>
+	</div>
+</section>
+
+<section class="container grid">
+	<% plans.forEach(p => { %>
+		<div class="card">
+			<h3><a href="/plans/<%= p._id %>"><%= p.title %></a></h3>
+			<p class="muted"><%= p.category.toUpperCase() %></p>
+			<p><%= p.description %></p>
+			<ul>
+				<% (p.features || []).forEach(f => { %>
+					<li><%= f %></li>
+				<% }) %>
+			</ul>
+			<div class="prices">
+				<span>₹<%= p.priceMonthly %>/mo</span>
+				<span>₹<%= p.priceYearly %>/yr</span>
+			</div>
+			<form method="post" action="/orders">
+				<input type="hidden" name="planId" value="<%= p._id %>">
+				<select name="billing">
+					<option value="monthly">Monthly</option>
+					<option value="yearly">Yearly</option>
+				</select>
+				<button class="btn" type="submit">Order</button>
+			</form>
+		</div>
+	<% }) %>
+</section>
+

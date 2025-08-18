@@ -1,0 +1,18 @@
+<section class="container">
+	<h1>Users</h1>
+	<table class="table">
+		<thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Verified</th><th>Joined</th></tr></thead>
+		<tbody>
+			<% users.forEach(u => { %>
+				<tr>
+					<td><%= u.name %></td>
+					<td><%= u.email %></td>
+					<td><%= u.role %></td>
+					<td><%= u.isEmailVerified ? 'Yes' : 'No' %></td>
+					<td><%= new Date(u.createdAt).toLocaleString() %></td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</section>
+

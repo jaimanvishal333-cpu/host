@@ -1,0 +1,19 @@
+<section class="container">
+	<h1>My Orders</h1>
+	<table class="table">
+		<thead><tr><th>Plan</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
+		<tbody>
+			<% orders.forEach(o => { %>
+				<tr>
+					<td><a href="/orders/<%= o._id %>"><%= o.plan?.title %></a></td>
+					<td>₹<%= o.amount %> <%= o.currency %></td>
+					<td><%= o.status %></td>
+					<td>
+						<form action="/orders/<%= o._id %>/delete" method="post" class="inline"><button type="submit">Delete</button></form>
+					</td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</section>
+
