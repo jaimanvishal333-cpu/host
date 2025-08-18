@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AcmeHost - Fast & Secure Web Hosting</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Affordable, reliable, and fast web hosting for your websites.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="logo">AcmeHost</a>
+      <nav>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/support.html">Support</a>
+        <a href="/dashboard.html" id="nav-dashboard" class="hide">Dashboard</a>
+        <a href="/login.html" id="nav-login">Login</a>
+        <a href="/register.html" id="nav-register" class="btn btn-primary">Sign Up</a>
+        <button id="nav-logout" class="btn btn-outline hide">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Lightning‑fast hosting for modern websites</h1>
+          <p>SSD storage, free SSL, and 24/7 support. Launch your site in minutes.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/pricing.html">Get Started</a>
+            <a class="btn btn-secondary" href="/pricing.html#plans">See Plans</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Quick domain check</h3>
+          <form id="domain-check-form">
+            <input type="text" id="domain-input" placeholder="yourbrand.com" autocomplete="off" />
+            <button class="btn btn-primary" type="submit">Check</button>
+          </form>
+          <div id="domain-check-result" class="muted"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container grid-3">
+        <div class="feature">
+          <h3>Free SSL</h3>
+          <p>Automatic HTTPS for all your sites with industry‑standard TLS.</p>
+        </div>
+        <div class="feature">
+          <h3>99.9% Uptime</h3>
+          <p>Global infrastructure with self‑healing, redundant architecture.</p>
+        </div>
+        <div class="feature">
+          <h3>24/7 Support</h3>
+          <p>Real humans available via chat and tickets whenever you need.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing teaser" id="plans">
+      <div class="container">
+        <h2>Simple, transparent pricing</h2>
+        <div class="plans">
+          <div class="plan">
+            <h3>Basic</h3>
+            <p class="price">₹149/mo</p>
+            <ul>
+              <li>1 website</li>
+              <li>10 GB SSD</li>
+              <li>Free SSL</li>
+            </ul>
+            <a class="btn btn-primary" href="/checkout.html?plan=Basic">Buy Basic</a>
+          </div>
+          <div class="plan popular">
+            <span class="badge">Popular</span>
+            <h3>Pro</h3>
+            <p class="price">₹349/mo</p>
+            <ul>
+              <li>10 websites</li>
+              <li>50 GB SSD</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn btn-primary" href="/checkout.html?plan=Pro">Buy Pro</a>
+          </div>
+          <div class="plan">
+            <h3>Business</h3>
+            <p class="price">₹799/mo</p>
+            <ul>
+              <li>Unlimited sites</li>
+              <li>200 GB SSD</li>
+              <li>Advanced security</li>
+            </ul>
+            <a class="btn btn-primary" href="/checkout.html?plan=Business">Buy Business</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> AcmeHost. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  
+</body>
+</html>

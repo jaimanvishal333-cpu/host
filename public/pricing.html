@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing - AcmeHost</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="logo">AcmeHost</a>
+      <nav>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/support.html">Support</a>
+        <a href="/dashboard.html" id="nav-dashboard" class="hide">Dashboard</a>
+        <a href="/login.html" id="nav-login">Login</a>
+        <a href="/register.html" id="nav-register" class="btn btn-primary">Sign Up</a>
+        <button id="nav-logout" class="btn btn-outline hide">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="container" style="padding:40px 0;">
+    <h1>Pricing</h1>
+    <div class="plans" style="margin-top:16px;">
+      <div class="plan">
+        <h3>Basic</h3>
+        <p class="price">₹149/mo</p>
+        <ul>
+          <li>1 website</li>
+          <li>10 GB SSD</li>
+          <li>Free SSL</li>
+        </ul>
+        <a class="btn btn-primary" href="/checkout.html?plan=Basic">Buy Basic</a>
+      </div>
+      <div class="plan popular">
+        <span class="badge">Popular</span>
+        <h3>Pro</h3>
+        <p class="price">₹349/mo</p>
+        <ul>
+          <li>10 websites</li>
+          <li>50 GB SSD</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-primary" href="/checkout.html?plan=Pro">Buy Pro</a>
+      </div>
+      <div class="plan">
+        <h3>Business</h3>
+        <p class="price">₹799/mo</p>
+        <ul>
+          <li>Unlimited sites</li>
+          <li>200 GB SSD</li>
+          <li>Advanced security</li>
+        </ul>
+        <a class="btn btn-primary" href="/checkout.html?plan=Business">Buy Business</a>
+      </div>
+    </div>
+  </main>
+  <script src="/js/app.js"></script>
+</body>
+</html>
