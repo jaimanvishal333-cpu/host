@@ -1,0 +1,25 @@
+<section class="container">
+	<div class="flex-between">
+		<h1>Plans</h1>
+		<a href="/admin/plans/new" class="btn">New Plan</a>
+	</div>
+	<table class="table">
+		<thead><tr><th>Title</th><th>Category</th><th>Monthly</th><th>Yearly</th><th>Active</th><th>Actions</th></tr></thead>
+		<tbody>
+			<% plans.forEach(p => { %>
+				<tr>
+					<td><%= p.title %></td>
+					<td><%= p.category %></td>
+					<td>₹<%= p.priceMonthly %></td>
+					<td>₹<%= p.priceYearly %></td>
+					<td><%= p.isActive ? 'Yes' : 'No' %></td>
+					<td>
+						<a href="/admin/plans/<%= p._id %>/edit">Edit</a>
+						<form action="/admin/plans/<%= p._id %>/delete" method="post" class="inline"><button type="submit">Delete</button></form>
+					</td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</section>
+

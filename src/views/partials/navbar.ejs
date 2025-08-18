@@ -1,0 +1,21 @@
+<header class="navbar">
+	<div class="container nav-inner">
+		<a href="/" class="brand">HostPro</a>
+		<nav>
+			<a href="/plans">Plans</a>
+			<% if (!currentUser) { %>
+				<a href="/auth/login">Login</a>
+				<a href="/auth/register" class="btn">Register</a>
+			<% } else { %>
+				<a href="/orders">My Orders</a>
+				<% if (currentUser.role === 'admin') { %>
+					<a href="/admin">Admin</a>
+				<% } %>
+				<form action="/auth/logout" method="post" class="inline">
+					<button type="submit">Logout</button>
+				</form>
+			<% } %>
+		</nav>
+	</div>
+</header>
+

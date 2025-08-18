@@ -1,0 +1,13 @@
+<section class="container auth">
+	<h1>Verify OTP</h1>
+	<p>We have sent a 6-digit OTP to <b><%= email %></b>.</p>
+	<% if (typeof error !== 'undefined') { %>
+		<div class="alert"><%= error %></div>
+	<% } %>
+	<form method="post" action="/auth/verify-otp" class="form">
+		<input type="hidden" name="email" value="<%= email %>">
+		<label>OTP<input type="text" name="code" minlength="6" maxlength="6" required></label>
+		<button class="btn" type="submit">Verify</button>
+	</form>
+</section>
+

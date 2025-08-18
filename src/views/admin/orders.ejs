@@ -1,0 +1,18 @@
+<section class="container">
+	<h1>Orders</h1>
+	<table class="table">
+		<thead><tr><th>User</th><th>Plan</th><th>Amount</th><th>Status</th><th>Created</th></tr></thead>
+		<tbody>
+			<% orders.forEach(o => { %>
+				<tr>
+					<td><%= o.user?.email %></td>
+					<td><%= o.plan?.title %></td>
+					<td>₹<%= o.amount %> <%= o.currency %></td>
+					<td><%= o.status %></td>
+					<td><%= new Date(o.createdAt).toLocaleString() %></td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</section>
+
