@@ -12,7 +12,11 @@ const orderSchema = new mongoose.Schema(
 		cfOrderId: { type: String },
 		cfPaymentSessionId: { type: String },
 		amount: { type: Number, required: true, min: 0 },
-		currency: { type: String, default: 'INR' }
+		currency: { type: String, default: 'INR' },
+		invoiceNumber: { type: String },
+		serverIP: { type: String },
+		serverName: { type: String },
+		credentials: { type: String }
 	},
 	{ timestamps: true }
 );

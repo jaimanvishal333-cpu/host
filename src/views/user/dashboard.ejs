@@ -1,0 +1,8 @@
+<section class="container">
+	<h1>Welcome, <%= currentUser?.name %></h1>
+	<div class="grid">
+		<div class="card"><h3>Orders</h3><p><%= stats.ordersCount %></p><p><a href="/orders">View Orders</a></p></div>
+		<div class="card"><h3>Tickets</h3><p><%= stats.ticketsCount %></p><p><a href="/tickets">View Tickets</a></p></div>
+	</div>
+</section>
+

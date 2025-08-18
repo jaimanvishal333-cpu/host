@@ -40,6 +40,9 @@ export const paymentCallback = asyncHandler(async (req, res) => {
 	const { data } = await cashfreeClient.get(`/orders/${order.cfOrderId}`);
 	if (data.order_status === 'PAID') {
 		order.status = 'paid';
+		if (!order.invoiceNumber) {
+			order.invoiceNumber = `INV-${new Date().getFullYear()}-${order._id.toString().slice(-6).toUpperCase()}`;
+		}
 		await order.save();
 		return res.redirect(`/orders/${order._id}`);
 	}

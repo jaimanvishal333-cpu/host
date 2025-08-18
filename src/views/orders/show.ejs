@@ -3,6 +3,13 @@
 	<p>Plan: <b><%= order.plan?.title %></b></p>
 	<p>Amount: ₹<%= order.amount %> <%= order.currency %></p>
 	<p>Status: <%= order.status %></p>
+	<% if (order.status === 'paid') { %>
+		<div class="card">
+			<p><b>Server IP:</b> <%= order.serverIP || '-' %></p>
+			<p><b>Server Name:</b> <%= order.serverName || '-' %></p>
+			<p><b>Credentials:</b> <%= order.credentials || '-' %></p>
+		</div>
+	<% } %>
 	<% if (order.status !== 'paid') { %>
 		<form method="post" action="/orders/<%= order._id %>/pay">
 			<button type="submit" class="btn">Create Payment Session</button>

@@ -2,6 +2,7 @@ import User from '../models/User.js';
 import Order from '../models/Order.js';
 import Plan from '../models/Plan.js';
 import asyncHandler from '../utils/asyncHandler.js';
+import Joi from 'joi';
 
 export const dashboard = asyncHandler(async (req, res) => {
 	const [usersCount, ordersCount, plansCount, paidOrders] = await Promise.all([
@@ -26,5 +27,12 @@ export const listOrders = asyncHandler(async (req, res) => {
 	return res.render('admin/orders', { title: 'Orders', orders });
 });
 
-export default { dashboard, listUsers, listOrders };
+export const editOrderCreds = asyncHandler(async (req, res) => {
+	const schema = Joi.object({ serverIP: Joi.string().allow(''), serverName: Joi.string().allow(''), credentials: Joi.string().allow('') });
+	const data = await schema.validateAsync(req.body);
+	await Order.findByIdAndUpdate(req.params.id, data);
+	return res.redirect('/admin/orders');
+});
+
+export default { dashboard, listUsers, listOrders, editOrderCreds };
 

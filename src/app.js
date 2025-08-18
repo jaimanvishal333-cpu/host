@@ -16,6 +16,9 @@ import planRoutes from './routes/plans.js';
 import orderRoutes from './routes/orders.js';
 import adminRoutes from './routes/admin.js';
 import paymentRoutes from './routes/payment.js';
+import ticketRoutes from './routes/tickets.js';
+import contactRoutes from './routes/contact.js';
+import userRoutes from './routes/user.js';
 import { notFound, errorHandler } from './middlewares/errorHandler.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -58,6 +61,9 @@ export function createApp() {
 	app.use('/orders', orderRoutes);
 	app.use('/admin', adminRoutes);
 	app.use('/payment', paymentRoutes);
+	app.use('/tickets', ticketRoutes);
+	app.use('/contact', contactRoutes);
+	app.use('/dashboard', userRoutes);
 
 	app.use(notFound);
 	app.use(errorHandler);

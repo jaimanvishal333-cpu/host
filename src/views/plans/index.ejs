@@ -1,11 +1,11 @@
-<section class="hero">
+<section class="hero" data-aos="fade-up">
 	<div class="container">
 		<h1>Modern Hosting for VPS, Dedicated, and Cloud</h1>
 		<p>Pick a plan and get started instantly.</p>
 	</div>
 </section>
 
-<section class="container grid">
+<section class="container grid" data-aos="fade-up" data-aos-delay="150">
 	<% plans.forEach(p => { %>
 		<div class="card">
 			<h3><a href="/plans/<%= p._id %>"><%= p.title %></a></h3>

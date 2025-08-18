@@ -1,0 +1,13 @@
+<section class="container">
+	<h1>Contact Us</h1>
+	<% if (typeof success !== 'undefined') { %>
+		<div class="alert"><%= success %></div>
+	<% } %>
+	<form class="form" method="post" action="/contact">
+		<label>Name<input type="text" name="name" required></label>
+		<label>Email<input type="email" name="email" required></label>
+		<label>Message<textarea name="message" required></textarea></label>
+		<button class="btn" type="submit">Send</button>
+	</form>
+</section>
+

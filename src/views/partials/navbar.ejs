@@ -2,12 +2,23 @@
 	<div class="container nav-inner">
 		<a href="/" class="brand">HostPro</a>
 		<nav>
-			<a href="/plans">Plans</a>
+			<a href="/">Home</a>
+			<div class="dropdown">
+				<a href="#">Services ▾</a>
+				<div class="dropdown-menu">
+					<a href="/plans?category=vps">VPS Hosting</a>
+					<a href="/plans?category=dedicated">Dedicated Hosting</a>
+					<a href="/plans?category=cloud">Cloud Hosting</a>
+				</div>
+			</div>
+			<a href="/contact">Contact Us</a>
 			<% if (!currentUser) { %>
 				<a href="/auth/login">Login</a>
 				<a href="/auth/register" class="btn">Register</a>
 			<% } else { %>
+				<a href="/dashboard">Dashboard</a>
 				<a href="/orders">My Orders</a>
+				<a href="/tickets">Tickets</a>
 				<% if (currentUser.role === 'admin') { %>
 					<a href="/admin">Admin</a>
 				<% } %>

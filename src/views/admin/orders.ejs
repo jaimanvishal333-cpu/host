@@ -1,7 +1,7 @@
 <section class="container">
 	<h1>Orders</h1>
 	<table class="table">
-		<thead><tr><th>User</th><th>Plan</th><th>Amount</th><th>Status</th><th>Created</th></tr></thead>
+		<thead><tr><th>User</th><th>Plan</th><th>Amount</th><th>Status</th><th>Server IP</th><th>Server Name</th><th>Actions</th></tr></thead>
 		<tbody>
 			<% orders.forEach(o => { %>
 				<tr>
@@ -9,7 +9,15 @@
 					<td><%= o.plan?.title %></td>
 					<td>₹<%= o.amount %> <%= o.currency %></td>
 					<td><%= o.status %></td>
-					<td><%= new Date(o.createdAt).toLocaleString() %></td>
+					<td>
+						<form class="form" method="post" action="/admin/orders/<%= o._id %>/creds">
+							<input name="serverIP" placeholder="IP" value="<%= o.serverIP || '' %>">
+							<input name="serverName" placeholder="Name" value="<%= o.serverName || '' %>">
+							<input name="credentials" placeholder="Credentials" value="<%= o.credentials || '' %>">
+							<button class="btn" type="submit">Save</button>
+						</form>
+					</td>
+					<td><a href="/orders/<%= o._id %>">View</a></td>
 				</tr>
 			<% }) %>
 		</tbody>

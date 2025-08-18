@@ -9,6 +9,10 @@ nav a { color: var(--muted); margin-right: 16px; text-decoration: none; }
 nav a.btn { background: var(--primary); color: white; padding: 8px 14px; border-radius: 8px; }
 .inline { display: inline-block; margin: 0; }
 .inline button { background: transparent; border: none; color: var(--muted); cursor: pointer; }
+.dropdown { position: relative; display: inline-block; }
+.dropdown-menu { display:none; position:absolute; background: var(--surface); border:1px solid rgba(255,255,255,0.08); border-radius: 8px; padding:8px; min-width: 200px; z-index:10; }
+.dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu a { display:block; padding:6px 8px; color: var(--text); }
 .hero { background: radial-gradient(1200px 600px at 10% 10%, rgba(91,108,255,0.2), transparent), radial-gradient(1200px 600px at 90% 10%, rgba(34,211,238,0.2), transparent); border-bottom: 1px solid rgba(255,255,255,0.06); }
 .hero h1 { font-size: 40px; margin: 0; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }

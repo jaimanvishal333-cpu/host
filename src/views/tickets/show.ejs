@@ -1,0 +1,16 @@
+<section class="container">
+	<h1><%= ticket.subject %></h1>
+	<p class="muted">Status: <%= ticket.status %></p>
+	<div class="card"><p><%= ticket.message %></p></div>
+	<h3>Replies</h3>
+	<div class="card">
+		<% (ticket.replies || []).forEach(r => { %>
+			<p><b><%= r.user?.name || 'User' %>:</b> <%= r.message %> <span class="muted">(<%= new Date(r.createdAt).toLocaleString() %>)</span></p>
+		<% }) %>
+	</div>
+	<form class="form" method="post" action="/tickets/<%= ticket._id %>/reply">
+		<label>Message<textarea name="message" required></textarea></label>
+		<button class="btn" type="submit">Reply</button>
+	</form>
+</section>
+
